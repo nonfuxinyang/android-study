@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AndroidStudy</string>
+<<<<<<< HEAD
     <string name="app_version">0.1</string>
+=======
+>>>>>>> origin/master
 </resources>
