@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     Button cusSurfaceView;
     @BindView(R.id.cus_list_grid_view)
     Button cusListGridView;
+    @BindView(R.id.related_list_view)
+    Button relatedListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +35,18 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Hello world !", Toast.LENGTH_LONG).show();
     }
 
-    @OnClick({R.id.cus_surface_view, R.id.cus_list_grid_view})
+    @OnClick({R.id.cus_surface_view, R.id.cus_list_grid_view,R.id.related_list_view})
     public void onViewClicked(View view) {
         Intent it = new Intent();
         switch (view.getId()) {
             case R.id.cus_surface_view:
-                it.setClass(MainActivity.this,AnimateViewActivity.class);
+                it.setClass(MainActivity.this, AnimateViewActivity.class);
                 break;
             case R.id.cus_list_grid_view:
-                it.setClass(MainActivity.this,ListViewWithGrid.class);
+                it.setClass(MainActivity.this, ListViewWithGrid.class);
+                break;
+            case R.id.related_list_view:
+                it.setClass(MainActivity.this, RelatedListActivity.class);
                 break;
         }
         MainActivity.this.startActivity(it);

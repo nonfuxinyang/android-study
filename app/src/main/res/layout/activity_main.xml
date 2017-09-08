@@ -27,5 +27,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="自定义listGridView"/>
+    <Button
+        android:id="@+id/related_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关联列表"/>
 </LinearLayout>
 
