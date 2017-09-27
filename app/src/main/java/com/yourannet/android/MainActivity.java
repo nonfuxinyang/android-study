@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button cusListGridView;
     @BindView(R.id.related_list_view)
     Button relatedListView;
+    @BindView(R.id.btn_chart_view)
+    Button btnChartView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Hello world !", Toast.LENGTH_LONG).show();
     }
 
-    @OnClick({R.id.cus_surface_view, R.id.cus_list_grid_view,R.id.related_list_view})
+    @OnClick({R.id.btn_chart_view,R.id.cus_surface_view, R.id.cus_list_grid_view, R.id
+            .related_list_view})
     public void onViewClicked(View view) {
         Intent it = new Intent();
         switch (view.getId()) {
+            case R.id.btn_chart_view:
+                it.setClass(MainActivity.this, ChartViewActivity.class);
+                break;
             case R.id.cus_surface_view:
                 it.setClass(MainActivity.this, AnimateViewActivity.class);
                 break;
@@ -51,4 +57,5 @@ public class MainActivity extends AppCompatActivity {
         }
         MainActivity.this.startActivity(it);
     }
+
 }
