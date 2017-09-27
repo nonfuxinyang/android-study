@@ -33,4 +33,7 @@ dependencies {
     compile 'com.jakewharton:butterknife-compiler:8.8.1'
     compile project(':mylibrary')
     compile files('libs/afinal_0.5.1_bin.jar')
+    compile 'com.github.tony19:logback-android-core:1.1.1-6'
+    compile 'com.github.tony19:logback-android-classic:1.1.1-6'
+    compile 'org.apache.directory.studio:org.slf4j.api:1.7.2'
 }
