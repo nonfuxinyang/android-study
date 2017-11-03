@@ -1,17 +1,19 @@
 package com.yourannet.singleton;
 
 /**
+ * 双检锁/双重检验锁
  * Created by Administrator on 2017/11/2.
  */
 public class Singleton {
-    private static  Singleton instance;
+    private static volatile Singleton instance;
 
-    private Singleton(){}
+    private Singleton() {
+    }
 
-    public static Singleton getInstance(){
-        if(instance == null){
-            synchronized (Singleton.class){
-                if(instance == null){
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
                     instance = new Singleton();
                 }
             }
@@ -19,7 +21,7 @@ public class Singleton {
         return instance;
     }
 
-    public void printMsg(){
+    public void printMsg() {
         System.out.print("hello singleton !");
     }
 }
